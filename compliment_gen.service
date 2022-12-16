@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn instance to serve the compliment generator for Alana
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/ComplimentGenerator/
+# Environment="PATH=/home/ubuntu/ComplimentGenerator/venv/bin"
+ExecStart=/home/ubuntu/ComplimentGenerator/.start.sh
+# ExecStart=gunicorn -w 4 --access-logfile=access.log --log-file=errors.log 'wsgi:app' --errors=errors.log
+
+[Install]
+WantedBy=mulit-user.target

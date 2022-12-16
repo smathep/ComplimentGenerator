@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS compliments;
+
+CREATE TABLE authors(
+    author_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    l_name TEXT NOT NULL,
+    f_name TEXT NOT NULL
+);
+
+CREATE TABLE compliments(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    author_id INTEGER,
+    content TEXT NOT NULL,
+    FOREIGN KEY(author_id) REFERENCES authors(author_id)
+);
+
