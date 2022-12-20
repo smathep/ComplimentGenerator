@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "CommentGen",
+            "database": "db/CommentGen.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
