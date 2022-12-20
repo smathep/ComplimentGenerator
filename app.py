@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import sqlite3
-import datetime
+import random
 app = Flask(__name__)
 
 def get_db_connection():
@@ -13,7 +13,8 @@ def main():
     conn = get_db_connection()
     compliments = conn.execute('SELECT * FROM compliments JOIN authors USING (author_id)').fetchall()
     conn.close()
-    return render_template('index.html', compliments=compliments)
+    # print(compliments[random.randrange(1,len(compliments))]['content'])
+    return render_template('index.html', compliment=compliments[random.randrange(0,len(compliments))])
 
 # if __name__ == "__main__":
-#     app.run(host='0.0.0.0')
+#     app.run(host='0.0.0.0') 

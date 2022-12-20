@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Compliment :) {% endblock %}</h1>
-    {% for comp in compliments %}
-        <div class='comment'>
-            <!-- <p>{{ comp['created'] }}</p> -->
-            <h2>{{ comp['id'] }}</h2>
-            <p>{{ comp['content'] }}</p>
-            <p>{{ comp['f_name'] }} {{ comp['l_name'] }}</p>
-        </div>
-    {% endfor %}
+    <h1>{% block title %} Hello There! {% endblock %}</h1>
+    <p>Feel free to visit anytime you need a pick-me-up or some nice words :)</p>
+
+    <br><br>
+    <div class='comment'>
+        <p>"{{ compliment['content'] }}"</p>
+        <p >
+            Written by {{ compliment['f_name'] }} {{ compliment['l_name'] }} ~ <a href="{{ url_for('main') }}">Want another?</a>
+            
+        </p>
+
+        <br><br><br><br><br><br><br><br>
+        <p>
+            Made with love by Patrick :)
+        </p>
+
+    </div>
+
 {% endblock %} 

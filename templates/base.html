@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>{% block title %} {% endblock %} - ComplimentApp</title>
     <style>
         nav a {
-            color: #d64161;
+            color: #ce1241;
             font-size: 3em;
             margin-left: 50px;
             text-decoration: none;
@@ -15,11 +16,7 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="{{ url_for('main') }}">FlaskApp</a>
 
-    </nav>
-    <hr>
     <div class="content">
         {% block content %} {% endblock %}
     </div>
