@@ -13,8 +13,20 @@ def main():
     conn = get_db_connection()
     compliments = conn.execute('SELECT * FROM compliments JOIN authors USING (author_id)').fetchall()
     conn.close()
-    print(compliments[random.randrange(1,len(compliments))]['content'])
-    return render_template('index.html', compliment=compliments[random.randrange(0,len(compliments))])
+    # print(compliments[random.randrange(1,len(compliments))]['content'])
+    rand_comp = compliments[random.randrange(0,len(compliments))]
+    increase_view_count(rand_comp['id'])
+    # print("type: %s",type(rand_comp))
+    return render_template('index.html', compliment=rand_comp)
+
+def increase_view_count(comp_id):
+    conn = get_db_connection()
+    print(type(comp_id))
+    # view_count = int(conn.execute('SELECT view_count FROM compliments WHERE id = ?', (comp_id,)).fetchall()[0]['view_count'])+1
+    conn.execute('UPDATE compliments SET view_count = ((SELECT view_count FROM compliments WHERE id = ?)+1) WHERE id = ?', (comp_id, comp_id))
+    # conn.execute('UPDATE compliments SET view_count = ?', [view_count+1])
+    conn.commit()
+    conn.close()
 
 # if __name__ == "__main__":
 #     app.run(host='0.0.0.0') 
