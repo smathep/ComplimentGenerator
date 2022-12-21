@@ -5,18 +5,20 @@
     <p>Feel free to visit anytime you need a pick-me-up or some nice words :)</p>
 
     <br><br>
-    <div class='comment'>
-        <p>"{{ compliment['content'] }}"</p>
-        <p >
-            Written by {{ compliment['f_name'] }} {{ compliment['l_name'] }} ~ <a href="{{ url_for('main') }}">Want another?</a>
-            
-        </p>
-
-        <br><br><br><br><br><br><br><br>
+    <div class='comment' >
+            <p>{{ compliment['content'].replace("\n", "<br>") | safe}}</p>
         
-        <p>Made with love by Patrick :) </p>
-        <p>(With a little help from <s>my</s> our friends)</p>
-
     </div>
+    <br>
+    <p >
+        Written by {{ compliment['f_name'] }} {{ compliment['l_name'] }} ~ <a href="{{ url_for('main') }}">Want another?</a>
+        
+    </p>
+
+    <br><br><br><br><br><br>
+    
+    <p>Made with love by Patrick :) </p>
+    <p>(With a little help from <s>my</s> our friends)</p>
+
 
 {% endblock %} 

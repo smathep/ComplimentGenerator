@@ -13,7 +13,7 @@ def main():
     conn = get_db_connection()
     compliments = conn.execute('SELECT * FROM compliments JOIN authors USING (author_id)').fetchall()
     conn.close()
-    # print(compliments[random.randrange(1,len(compliments))]['content'])
+    print(compliments[random.randrange(1,len(compliments))]['content'])
     return render_template('index.html', compliment=compliments[random.randrange(0,len(compliments))])
 
 # if __name__ == "__main__":
