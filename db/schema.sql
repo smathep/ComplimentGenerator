@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS authors;
-DROP TABLE IF EXISTS compliments;
+-- DROP TABLE IF EXISTS authors;
+-- DROP TABLE IF EXISTS compliments;
 -- DROP TABLE IF EXISTS view_count;
 
 CREATE TABLE authors(
