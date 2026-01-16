@@ -15,6 +15,7 @@ def main():
     conn.close()
     # print(compliments[random.randrange(1,len(compliments))]['content'])
     rand_comp = compliments[random.randrange(0,len(compliments))]
+    # Idea: select all quotes with a view_count of 0 and when the comment is viewed, increment it so it won't be shown until all others are shown. Once all are viewed, reset view_count
     increase_view_count(rand_comp['id'])
     # print("type: %s",type(rand_comp))
     return render_template('index.html', compliment=rand_comp)

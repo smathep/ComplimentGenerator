@@ -32,6 +32,7 @@ def insert_compliment(lname, fname, comp):
 # insert_author('Kissoon', 'Sheranie')
 # insert_author('McGuire', 'Brendan')
 # insert_author('Payne', 'Jordan')
+# insert_author('Chen', 'Stephen')
 
 
 #Add compliments
@@ -72,7 +73,7 @@ def insert_compliment(lname, fname, comp):
 # insert_compliment('McGuire', 'Brendan', "You seem like such a great person, I'm so excited to finally meet you in person!")
 # insert_compliment('Payne', 'Jordan', "You're cooler than pat")
 #To add
-
+# insert_compliment('Chen', 'Stephen', "Breathe. It's just a bad day, not a bad life.\n\nJust remember how hard you pushed yourself today and that tomorrow will be a better day. Keep pushing on Alana, proud of ya!")
 
 connection.commit()
 connection.close()
