@@ -1,4 +1,4 @@
-venv*
+.venv*
 errors.log
 access.log
 __pycache__

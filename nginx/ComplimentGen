@@ -1,5 +1,5 @@
 server {
-    server_name dev.patricks.link dev.patricksmathers.com alanar.app;
+    server_name dev.patricks.link dev.patricksmathers.com alanar.app test.alanar.app;
     location / {
 		proxy_pass         "http://localhost:8000";
 		proxy_redirect     off;
@@ -9,18 +9,11 @@ server {
 		proxy_read_timeout 300;
 	}
 
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/dev.patricks.link/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/dev.patricks.link/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-
-
-
-
-
-
-
+    # listen 443 ssl; # managed by Certbot
+    # ssl_certificate /etc/letsencrypt/live/dev.patricks.link/fullchain.pem; # managed by Certbot
+    # ssl_certificate_key /etc/letsencrypt/live/dev.patricks.link/privkey.pem; # managed by Certbot
+    # include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    # ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }server {
     if ($host = alana.patricks.link) {
@@ -34,7 +27,7 @@ server {
 
 
     listen 80;
-    server_name alana.patricksmathers.com alana.patricks.link;
+    server_name alana.patricksmathers.com alana.patricks.link test.alanar.app;
     return 404; # managed by Certbot
 
 
